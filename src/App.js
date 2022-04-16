@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import CardList from "./components/card-list/card-list.component";
+import { CardList } from "./components/card-list/card-list.component";
+
 import './App.css'
 
 class App extends Component {
@@ -37,8 +38,7 @@ class App extends Component {
             onChange={this.getSearchInput} />
         </div>
 
-        <CardList monsters = {filteredMonsters} />
-        
+        <CardList monsters={filteredMonsters} />
 
       </div>
     )
