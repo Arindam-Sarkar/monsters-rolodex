@@ -6,7 +6,7 @@ export const CardList = props => (
   <div>
     {
       props.monsters.map((monster) => {
-        return <Card key={monster.id} name={monster.name} />
+        return <Card monster={monster} />
       })
     }
 
