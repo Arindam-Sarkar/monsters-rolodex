@@ -1,10 +1,17 @@
-import React from "react";
+import React, { Component } from "react";
 
-export const SearchBar = props => (
-  <div>
-    <input type="search"
-      placeholder="Input Monsters"
-      onChange={props.getSearchInput} />
-  </div>
-)
+class SearchBar extends Component {
 
+  render() {
+    return (
+      <div>
+        <input type="search"
+          placeholder="Enter Monster"
+          onChange={str => this.props.callback(str.target.value)}
+        />
+      </div>
+    )
+  }
+}
+
+export default SearchBar

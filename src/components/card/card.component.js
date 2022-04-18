@@ -1,13 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 
-export const Card = props => (
-  <>
-    <div>
-      <img
-        alt='monster'
-        src={`https://robohash.org/${props.monster.id}?set=set2&size=180x180`} />
-      <h2> {props.monster.name} </h2>
-      <p> {props.monster.email} </p>
-    </div>
-  </>
-)
+class Card extends Component {
+  render() {
+    return (
+      <>
+        <img alt="monster " src={`https://robohash.org/${this.props.monster.id}?set=set2&size=180x180`} />
+        <h1>{this.props.monster.name}</h1>
+        <h1>{this.props.monster.email}</h1>
+      </>
+    )
+  }
+}
+
+export default Card
