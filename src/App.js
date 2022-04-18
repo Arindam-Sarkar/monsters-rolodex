@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import CardList from "./components/card-list/card-list.component";
-import SearchBar from "./components/search-bar/search-bar.component";
-
 // https://jsonplaceholder.typicode.com/users
 // https://robohash.org/1?set=set2&size=180x180
+
+
+import React, { Component } from "react";
+import SearchBar from "./components/search-bar/search-bar.component";
+import CardList from "./components/card-list/card-list.component";
 
 class App extends Component {
   constructor() {
@@ -22,28 +23,28 @@ class App extends Component {
   }
 
   onSearchChange = (str) => {
-    console.log(str);
     this.setState({ searchString: str })
   }
 
   render() {
 
     const { monsters, searchString } = this.state
+    const { onSearchChange } = this
 
-    const filteredMonsters = monsters.filter(monster =>
+    const filteredmonsters = monsters.filter(monster => (
       monster.name.toLowerCase().includes(searchString.toLowerCase())
-    )
-
+    ))
     return (
-      <>
-        <SearchBar callback={this.onSearchChange} />
-        <h1>{searchString}</h1>
-        <CardList monsters={filteredMonsters} />
-      </>
+      <div>
+        < SearchBar callBack={onSearchChange} />
+        < CardList monsters={filteredmonsters} />
+
+      </div>
+
     )
-
   }
-}
 
+
+}
 
 export default App

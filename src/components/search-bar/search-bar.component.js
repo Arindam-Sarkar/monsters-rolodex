@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 
+
 class SearchBar extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <input type="search"
-          placeholder="Enter Monster"
-          onChange={str => this.props.callback(str.target.value)}
+          placeholder="Enter Monsters"
+          onChange={str => this.props.callBack(str.target.value)}
         />
-      </div>
+
+      </>
     )
   }
 }
